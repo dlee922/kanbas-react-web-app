@@ -1,0 +1,92 @@
+<html>
+  <head></head>
+  <body>
+    <select>
+      <option>SpeedGrader</option>
+    </select>
+    <hr/>
+    <h3>Assignment Name</h3>
+    <input type="text" placeholder="Enter Assignment Name"/>
+    <br/>
+    <br/>
+    <form>
+      <textarea cols="20" rows="2" placeholder="This is the assignment description."></textarea>
+    </form>
+    <br/>
+
+    <label for="points">Points</label>
+    <br/>
+    <input id="points" type="text"/>
+    <br/>
+    <br/>
+
+    <label for="assignment-group">Assignment Group</label>
+    <br/>
+    <select id="assignment-group">
+      <option>ASSIGNMENTS</option>
+    </select>
+    <br/>
+    <br/>
+
+    <label for="display-grade-as">Display Grade as</label>
+    <br/>
+    <select id="display-grade-as">
+      <option>Percentage</option>
+    </select>
+    <br/>
+    <br/>
+
+    <label for="submission-type">Submission Type</label>
+    <br/>
+    <select id="submission-type">
+      <option>Online</option>
+    </select>
+    <br/>
+    <br/>
+
+    <label>Online Entry Options</label>
+    <br/>
+    <input type="checkbox" name="online-entry-options" id="text-entry"/>
+    <label for="text-entry">Text Entry</label>  <br/>
+
+    <input type="checkbox" name="online-entry-options" id="website-url"/>
+    <label for="website-url">Website URL</label>  <br/>
+
+    <input type="checkbox" name="online-entry-options" id="media-recordings"/>
+    <label for="media-recordings">Media Recordings</label>  <br/>
+
+    <input type="checkbox" name="online-entry-options" id="student-annotation"/>
+    <label for="student-annotation">Student Annotation</label>  <br/>
+
+    <input type="checkbox" name="online-entry-options" id="file-uploads"/>
+    <label for="file-uploads">File Uploads</label>  <br/> 
+    <br/>
+
+    <label>
+      Assign to <br/>
+      <input type="text" name="assign-to" placeholder="Everyone"/>
+    </label>
+    <br/>
+    <br/>
+    <label>
+      Due <br/>
+      <input type="date" name="due" value="2023-01-01">
+    </label>
+    <br/>
+    <br/>
+    <label>
+      Available from <br/>
+      <input type="date" name="available-from" value="2023-01-01">
+    </label>
+    <br/>
+    <br/>
+    <label>
+      Until <br/>
+      <input type="date" name="until" value="2023-01-01">
+    </label>
+    <br/>
+    <br/>
+    <a href="/Kanbas/Courses/Assignments/screen.html"><button>Cancel</button></a>
+    <a href="/Kanbas/Courses/Assignments/screen.html"><button>Save</button></a>
+  </body>
+</html>
