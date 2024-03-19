@@ -1,4 +1,4 @@
-import { courses } from "../../Kanbas/Database";
+import db from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useParams, Link } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { HiMenu } from "react-icons/hi";
@@ -8,7 +8,7 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import { useState } from "react";
 
-function Courses() {
+function Courses({ courses } : { courses: any[]; }) {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   const [currentSection, setCurrentSection] = useState("");
