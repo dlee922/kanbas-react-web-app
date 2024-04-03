@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 function WorkingWithObjects() {
   const [assignment, setAssignment] = useState({
     id: 1, title: "NodeJS Assignment",
@@ -9,8 +12,9 @@ function WorkingWithObjects() {
   const [module, setModule] = useState({
     id: "1", name: "x", description: "y", course: "z",
   })
-  const ASSIGNMENT_URL = "http://localhost:4000/a5/assignment"
-  const MODULE_URL = "http://localhost:4000/a5/module"
+  const ASSIGNMENT_URL = `${API_BASE}/a5/assignment`
+  const MODULE_URL = `${API_BASE}/a5/module`
+  
   const fetchAssignment = async () => {
     const response = await axios.get(`${ASSIGNMENT_URL}`);
     setAssignment(response.data);
@@ -60,11 +64,11 @@ function WorkingWithObjects() {
             completed: e.target.checked })}
         checked={assignment.completed}/>
       <h4>Retrieving Objects</h4>
-      <a href="http://localhost:4000/a5/assignment" className="btn btn-primary me-2">
+      <a href={`${API_BASE}/a5/assignment`} className="btn btn-primary me-2">
         Get Assignment
       </a>
       <h4>Retrieving Properties</h4>
-      <a href="http://localhost:4000/a5/assignment/title" className="btn btn-primary me-2">
+      <a href={`${API_BASE}/a5/assignment/title`} className="btn btn-primary me-2">
         Get Title
       </a><br/>
       <a href={`${MODULE_URL}/name/${module.name}`} className="btn btn-primary me-2">
@@ -82,11 +86,11 @@ function WorkingWithObjects() {
             description: e.target.value })}
             value={module.description}/>
       <h4>Retrieve Module Object</h4>
-      <a href="http://localhost:4000/a5/module" className="btn btn-primary me-2">
+      <a href={`${API_BASE}/a5/module`} className="btn btn-primary me-2">
         Get Module
       </a>
       <h4>Retrieve Module Name</h4>
-      <a href="http://localhost:4000/a5/module/name" className="btn btn-primary me-2">
+      <a href={`${API_BASE}/a5/module/name`} className="btn btn-primary me-2">
         Get Module Name
       </a>
     </div>
