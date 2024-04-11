@@ -1,0 +1,36 @@
+.module-list-container {
+  width: 100%;
+}
+
+.modules-list li {
+  margin-bottom: 20px;
+}
+
+.module-list-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.module-list-icon-check {
+  color: green;
+}
+
+.studentview-button {
+  margin-right: 20px;
+}
+
+.studentview-button-icon {
+  margin-right: 10px;
+}
+
+.btn-toolbar {
+  margin-bottom: 10px;
+}
+.btn-toolbar .btn {
+  margin-left: 10px;
+}
+
+.publish-icon {
+  margin-right: 10px;
+  color: green;
+}

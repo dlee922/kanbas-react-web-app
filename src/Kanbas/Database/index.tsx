@@ -1,7 +1,7 @@
 import courses from "./courses.json"
 import modules from "./modules.json";
 import assignments from "./assignments.json";
-export {
+export default {
   courses, modules, assignments,
 };
 

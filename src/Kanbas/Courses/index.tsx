@@ -1,4 +1,4 @@
-import { courses } from "../../Kanbas/Database";
+import db from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useParams, Link } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { HiMenu } from "react-icons/hi";
@@ -6,11 +6,22 @@ import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function Courses() {
+function Courses({ courses } : { courses: any[]; }) {
   const { courseId } = useParams();
-  const course = courses.find((course) => course._id === courseId);
+  const COURSES_API = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState<any>({ _id: "" });
+  const findCourseById = async (courseId?: string) => {
+    const response = await axios.get(
+      `${COURSES_API}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
   const [currentSection, setCurrentSection] = useState("");
 
   const Breadcrumb = () => (
