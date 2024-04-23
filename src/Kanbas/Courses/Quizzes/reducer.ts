@@ -8,8 +8,15 @@ export interface Question {
   questionBody: string;
   correctAnswer: string;
   possibleAnswers: string[];
+  answers: Answer[];
 }
 
+export interface Answer {
+  _id?: string;
+  answer: string;
+  isCorrect: boolean;
+  
+}
 export interface Quiz {
   _id?: string;
   id: string;
@@ -33,10 +40,7 @@ export interface Quiz {
   course: string;
 }
 
-export interface Answer {
-  _id?: string;
-  answer: string;
-}
+
 
 interface QuizState {
   quizzes: Quiz[];
@@ -81,6 +85,7 @@ const initialState: QuizState = {
     questionBody: '',
     correctAnswer: '',
     possibleAnswers: [],
+    answers: [],
   },
   answers: [],
   answer: '',

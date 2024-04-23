@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./index.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaEllipsisV, FaCheckCircle, FaBan, FaPen } from "react-icons/fa";
@@ -13,7 +13,6 @@ function QuizDetail() {
   const quiz = useSelector((state: KanbasState) => state.quizzesReducer.quiz);
 
   const { courseId, quizId } = useParams();
-  const [published, setPublished] = useState(quiz.isPublished);
 
   const calculateQuizPoints = () => {
     let totalPoints = 0;
@@ -23,8 +22,11 @@ function QuizDetail() {
     return totalPoints;
   };
 
-  // placeholder, if quiz is set in redux when first visit quiz home page,
-  // then delete this useEffect block
+  const handlePublish = () => {
+    const newPublishedState = !quiz.isPublished;
+    client.updateQuiz({ ...quiz, isPublished: newPublishedState });
+    dispatch(setQuiz({ ...quiz, isPublished: newPublishedState }));
+  };
 
   useEffect(() => {
     if (quizId && quizId !== quiz._id) {
@@ -48,15 +50,16 @@ function QuizDetail() {
       <div className="d-flex justify-content-end gap-1">
         <button
           className="btn btn-success d-flex align-items-center"
-          onClick={() => setPublished(!published)}
+          onClick={handlePublish}
+          title={quiz.isPublished ? "Click to Unpublish" : "Click to Publish"}
         >
-          {published ? (
+          {quiz.isPublished ? (
             <>
-              <FaBan className="me-1" /> Unpublished
+              <FaCheckCircle className="me-1" /> Published
             </>
           ) : (
             <>
-              <FaCheckCircle /> Published
+              <FaBan className="me-1" /> Unpublished
             </>
           )}
         </button>
@@ -118,6 +121,10 @@ function QuizDetail() {
           <tr>
             <th>Show Correct Answers</th>
             <td>{quiz.showCorrectAnswers}</td>
+          </tr>
+          <tr>
+            <th>Access Code</th>
+            <td>{quiz.accessCode === "" ? "None" : quiz.accessCode}</td>
           </tr>
           <tr>
             <th>One Question at a Time</th>

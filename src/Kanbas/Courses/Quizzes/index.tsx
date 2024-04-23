@@ -1,17 +1,17 @@
-import QuizTopBar from "./QuizTopBar";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaEllipsisV, FaPlus } from "react-icons/fa";
 import QuizList from "./QuizList";
 import * as client from "./client";
 import { setQuiz } from "./reducer";
 import { useDispatch } from "react-redux";
+
 function Quizzes() {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
     <div>
-      <QuizTopBar/>  
+      {/* top nav bar for quizzes home screen */}
       <div className="container">
         <div className="d-flex align-items-center justify-content-between">
           <input
@@ -39,6 +39,7 @@ function Quizzes() {
 
       <QuizList />
     </div>
-  )
+  );
 }
+
 export default Quizzes;
