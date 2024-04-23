@@ -1,4 +1,4 @@
-import "./index.css";
+import "./styles.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaEllipsisV, FaCheckCircle, FaBan, FaPen } from "react-icons/fa";

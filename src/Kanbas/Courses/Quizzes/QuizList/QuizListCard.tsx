@@ -112,7 +112,7 @@ function QuizListCard({ quiz }: { quiz: Quiz }) {
               ></i>
             ) : (
               <i
-                className="fas fa-times"
+                className="fas fa-ban"
                 style={{ color: "red", marginRight: "15px" }}
               ></i>
             )}
