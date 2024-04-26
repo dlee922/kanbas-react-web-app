@@ -25,8 +25,8 @@ const MultipleItem: React.FC<Props> = ({ question }) => {
         possibleAnswers: [...question.possibleAnswers, inputValue],
       };
       console.log(inputValue);
-      dispatch(addAnswer(inputValue)); // Add answer to Redux state
-      setInputValue(""); // Clear the input field after adding the answer
+      dispatch(addAnswer(inputValue));
+      setInputValue("");
     }
     console.log(question.possibleAnswers);
   };

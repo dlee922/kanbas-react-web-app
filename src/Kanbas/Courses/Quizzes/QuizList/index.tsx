@@ -27,7 +27,6 @@ function QuizList() {
       fetchQuizzes();
       console.log("useEffect");
     }
-    // }, [courseId, dispatch]);
   }, []);
 
   return (

@@ -1,8 +1,6 @@
 import axios from 'axios';
 import {Question, Quiz} from './reducer';
 
-// export const BASE_API = process.env.REACT_APP_API_BASE;
-
 export const BASE_API = 'http://localhost:4000';
 export const COURSES_API = `${BASE_API}/api/courses`;
 export const QUIZZES_API = `${BASE_API}/api/quizzes`;

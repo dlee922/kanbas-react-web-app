@@ -122,17 +122,6 @@ const QuestionEditCard = ({
     }));
   }, [currentQuestion.questionType]);
 
-  // const handleEditorChange = (newEditorState: EditorState) => {
-  //   setEditorState(newEditorState);
-  //   // Get the plain text from the editor state
-  //   const plainText = newEditorState.getCurrentContent().getPlainText();
-  //   // Update your state to only store the plain text
-  //   setCurrentQuestion((prevQuestion) => ({
-  //     ...prevQuestion,
-  //     questionBody: plainText,
-  //   }));
-  // };
-
   const handleInputChange = (
     field: keyof Question,
     value: string | string[] | Answer[]
@@ -155,14 +144,6 @@ const QuestionEditCard = ({
     }));
   };
 
-  // const handlePossibleAnswerChange = (index: number, value: string) => {
-  //   const newPossibleAnswers = [...currentQuestion.possibleAnswers];
-  //   newPossibleAnswers[index] = value;
-  //   setCurrentQuestion((prevQuestion) => ({
-  //     ...prevQuestion,
-  //     possibleAnswers: newPossibleAnswers,
-  //   }));
-  // };
   const addAnswer = (answers: Answer[]) => {
     setCurrentQuestion((prevQuestion) => ({
       ...prevQuestion,

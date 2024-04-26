@@ -23,7 +23,6 @@ function Quizzes() {
           <div className="d-flex">
             <button
               className="btn btn-danger d-flex align-items-center me-1"
-              // onClick={handleCreateAndNavigate}
                 onClick={() => navigate(`/Kanbas/Courses/${courseId}/Quizzes/New/Edit`)}
             >
               <FaPlus className="me-2" />

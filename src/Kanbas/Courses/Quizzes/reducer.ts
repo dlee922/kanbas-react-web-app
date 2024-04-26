@@ -99,9 +99,6 @@ const quizzesSlice = createSlice({
     setQuizzes: (state, action) => {
       state.quizzes = action.payload;
     },
-    // setQuiz: (state, action) => {
-    //   state.quiz = action.payload;
-    // },
 
     setQuiz: (state, action) => {
       return {
@@ -122,17 +119,6 @@ const quizzesSlice = createSlice({
         state.quiz = initialState.quiz;
       }
     },
-
-
-      // updateQuiz: (state, action) => {
-    //   state.quizzes = state.quizzes.map((quiz) => {
-    //     if (quiz._id === action.payload._id) {
-    //         return action.payload;
-    //       } else {
-    //         return quiz;
-    //       }
-    //     });
-    //   },
 
     updateQuiz: (state, action) => {
 

@@ -36,7 +36,6 @@ function QuizDetail() {
           dispatch(setQuiz(fetchedQuiz));
         } catch (error) {
           console.error("Failed to fetch questions:", error);
-          // setLoading(false);
         }
       };
 
@@ -163,7 +162,7 @@ function QuizDetail() {
           <tr>
             <td>
               {new Date(quiz.quizDueDate).toLocaleString("en-US", {
-                month: "short", // "short" month format, e.g., "Sep"
+                month: "short",
                 day: "2-digit",
                 hour: "numeric",
                 minute: "2-digit",

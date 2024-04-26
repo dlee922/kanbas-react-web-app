@@ -41,22 +41,12 @@ function QuizDetailsEditor() {
 
   const quizDesc = "A quiz covering basic web terms.";
 
-  // const editorState = initializeEditorState(
-  //   quizId === "New" ? "" : quiz.quizDesc
-  // );
-
   const [editorState, setEditorState] = useState(() => {
     return quiz.quizDesc
         ? jsonToEditorState(quiz.quizDesc)
         : EditorState.createEmpty();
   });
 
-
-
-  // console.log(editorState.getCurrentContent().getPlainText());
-
-  // const [editorState, setEditorState] = useState(initializeEditorState(quiz.quizDesc));
-  // const [currentEditorState, setEditorState] = useState(editorState);
 
   const handleEditorChange = (newEditorState: EditorState) => {
     setEditorState(newEditorState);
@@ -100,7 +90,7 @@ function QuizDetailsEditor() {
             className="form-control"
           >
             <option value="GradedQuiz">Graded Quiz</option>
-            <option value="PracticeQuizy">Practice Quizy</option>
+            <option value="PracticeQuizy">Practice Quiz</option>
             <option value="GradedSurvey">Graded Survey</option>
             <option value="UngradedSurvey">Ungraded Survey</option>
           </select>
